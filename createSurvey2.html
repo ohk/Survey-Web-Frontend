@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style3.css">
+</head>
+<body>
+    <form>
+        <div class="surveyTitle">
+            <label class="labelSurveyTitle">Enter the title of survey:</label>
+            <input type="text" class="form-control" placeholder="Title">
+        </div>
+
+        <div class="form-check">
+            <label class="form-check-label" for="term">
+                <input type="checkbox" class="form-check-input" id="terms">I accept that this survey is public
+            </label>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btnSave">Save the Survey!</button>
+        </div>
+
+        <div class="form-grop">
+            <select class="form-control-sm">
+                <option>Multiple Choice Question</option>
+                <option>Open-Ended Question</option>
+            </select>
+        </div> 
+
+        <button type="submit" class="btn add" onclick="addFunction();">Add</button>
+
+        <div id = "firstQuestion" style="display:none">
+        <div class = "questionBox">
+            <input type="text" class="form-control" placeholder="Enter the question here">
+            <input type="text" class="form-control-sm option" placeholder="Enter the option here">
+            <input type="text" class="form-control-sm option" placeholder="Enter the option here">
+            <button type="submit" class="btn btnOption">Add another option</button>
+            <button type="submit" class="btn btnDelete">Delete!</button>
+            <button type="submit" class="btn btnSaveQuestion">Save!</button>
+        </div>
+        </div>
+        <div  id = "secondQuestion" style="display:none"> 
+            <div class = "questionBox2">
+                <input type="text" class="form-control" placeholder="Enter the question here">
+                <textarea type="text" class="form-control-sm answer" placeholder="Answer" rows="7" ></textarea>
+                <button type="submit" class="btn btnDelete">Delete!</button>
+                <button type="submit" class="btn btnSaveQuestion">Save!</button>
+            </div>
+        </div>
+    </form>
+    <script> src = "createSurvey.js"</script>
+</body>
+
+</html>
