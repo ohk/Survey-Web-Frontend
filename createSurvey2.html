@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="style3.css">
 </head>
 <body>
-    <form>
+    
         <div class="surveyTitle">
             <label class="labelSurveyTitle">Enter the title of survey:</label>
             <input type="text" class="form-control" placeholder="Title">
@@ -23,19 +23,23 @@
         </div>
 
         <div class="form-grop">
-            <select class="form-control-sm">
-                <option>Multiple Choice Question</option>
-                <option>Open-Ended Question</option>
+            <select class="form-control-sm" id="select-box">
+                <option value="1">Multiple Choice Question</option>
+                <option value="2">Open-Ended Question</option>
             </select>
         </div> 
 
-        <button type="submit" class="btn add" onclick="addFunction();">Add</button>
+        <button type="submit" class="btn add" onclick="addFunction()">Add</button>
+
+        <div class="myList" id="myList1"></div>
 
         <div id = "firstQuestion" style="display:none">
         <div class = "questionBox">
             <input type="text" class="form-control" placeholder="Enter the question here">
-            <input type="text" class="form-control-sm option" placeholder="Enter the option here">
-            <input type="text" class="form-control-sm option" placeholder="Enter the option here">
+            <div class="optionClass">
+                <input type="text" class="form-control-sm option" placeholder="Enter the option here">
+                <input type="text" class="form-control-sm option" placeholder="Enter the option here">
+            </div>
             <button type="submit" class="btn btnOption">Add another option</button>
             <button type="submit" class="btn btnDelete">Delete!</button>
             <button type="submit" class="btn btnSaveQuestion">Save!</button>
@@ -44,13 +48,13 @@
         <div  id = "secondQuestion" style="display:none"> 
             <div class = "questionBox2">
                 <input type="text" class="form-control" placeholder="Enter the question here">
-                <textarea type="text" class="form-control-sm answer" placeholder="Answer" rows="7" ></textarea>
+                <textarea type="text" class="form-control-sm answer" disabled="disabled" placeholder="Answer" rows="7" ></textarea>
                 <button type="submit" class="btn btnDelete">Delete!</button>
                 <button type="submit" class="btn btnSaveQuestion">Save!</button>
             </div>
         </div>
-    </form>
-    <script> src = "createSurvey.js"</script>
+    
+    <script src = "createSurvey.js"></script>
 </body>
 
 </html>
