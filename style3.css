@@ -216,3 +216,17 @@ h1 {
     margin-right: 5%;
     margin-top: -30px;
 }
+
+.btnDeleteMySurvey{
+    background-color: #fb2525;
+    color: white;
+    margin-top: -45px;
+    font-size: 14px;
+    float: right;
+    margin-right: -9%;
+}
+
+.toggle{
+    margin-left: -11%;
+    margin-top: -40px;
+}
