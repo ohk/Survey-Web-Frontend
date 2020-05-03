@@ -47,13 +47,14 @@ h1 {
   font-size: 18px;
 }
 
-.btnSave {
-  background-color: #fb2525;
-  color: #ffffff;
-  float: right;
-  margin-right: -15%;
-  margin-top: 22px;
-  font-size: 20px;
+
+.btnSave{
+    background-color: #fb2525;
+    color: #ffffff;
+    float: right;
+    margin-right: -15%;
+    margin-top: 22px;
+    font-size: 20px;
 }
 
 .questionLabel {
@@ -75,12 +76,23 @@ h1 {
   font-size: 14px;
 }
 
+
 .add:hover {
   margin-left: 22%;
   margin-top: -32px;
   color: #fff;
   background-color: rgb(240, 164, 23);
   font-size: 14px;
+}
+
+.questionBox{
+    background-color: rgb(56, 56, 56);
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translate(-50%, 15%);
+    box-sizing: border-box;   
+    padding: 30px 30px;
 }
 
 .questionBox {
@@ -144,6 +156,7 @@ h1 {
   height: 100px;
 }
 
+
 .btnSaveSurvey {
   background-color: #fb2525;
   color: #ffffff;
@@ -204,13 +217,28 @@ h1 {
   margin-top: 15px;
 }
 
-.note {
-  color: gray;
+
+.note{
+    color: gray;
 }
 
-.dueDate {
-  width: 15%;
-  float: right;
-  margin-right: 5%;
-  margin-top: -30px;
+.dueDate{
+    width: 15%;
+    float: right;
+    margin-right: 5%;
+    margin-top: -30px;
+}
+
+.btnDeleteMySurvey{
+    background-color: #fb2525;
+    color: white;
+    margin-top: -45px;
+    font-size: 14px;
+    float: right;
+    margin-right: -9%;
+}
+
+.toggle{
+    margin-left: -11%;
+    margin-top: -40px;
 }
