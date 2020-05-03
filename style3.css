@@ -242,3 +242,40 @@ h1 {
     margin-left: -11%;
     margin-top: -40px;
 }
+
+.result-open-ended{
+  color:white;
+  margin-top: 25px;
+  margin-left: 10%;
+  padding-bottom: 25px;
+
+}
+
+.result-multi-single{
+  color: white;
+  margin-top: 25px;
+  margin-left: 10%;
+  padding-bottom: 25px;
+
+}
+
+.result-multi-multi{
+  color: white;
+  margin-top: 25px;
+  margin-left: 10%;
+  padding-bottom: 25px;
+
+}
+
+.result-open-ended-question{
+  font-size: 25;
+}
+
+.result-multi-single-question{
+  font-size: 25;
+}
+
+.result-multi-multi-question{
+  font-size: 25;
+  
+}
