@@ -58,7 +58,7 @@ const sendHttpRequest = (method, url, data) => {
           <div id="${element._id}">
           <a href="#" class="list-group-item list-group-item-action" onclick="document.location = 'survey.html?survey=${element._id}'" name = "a">${element.surveyName}</a>
           <button type="submit" class="btn btnDeleteMySurvey">Delete!</button>
-          <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-onstyle="dark" class="reachable" data-on="Reachable" data-off="Unreachable">
+          <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-onstyle="dark" class="reachable" data-on="Public" data-off="Private">
           </div> 
           `);
           if(element.reachable == true){
@@ -66,20 +66,38 @@ const sendHttpRequest = (method, url, data) => {
           }else{
             $("#" + element._id).find(".reachable").bootstrapToggle("off");
           }
+
           $("#" + element._id).find(".reachable").change(function(){
             console.log(this.checked);
             console.log(this.parentNode.parentNode.id);
-            sendHttpRequest(
-                "POST",
-                "https://ytuce-sab.herokuapp.com/api/survey/unreachable",
-                {
-                    "surveyId": this.parentNode.parentNode.id 
-                }
-              ).then((response) => {
-                console.log(response);
-              });
-            
-          });
+            console.log($("#" + element._id).find(".reachable").value);
+            if(this.checked == false){
+                console.log("sadfg");
+                sendHttpRequest(
+    
+                    "POST",
+                    "https://ytuce-sab.herokuapp.com/api/survey/unreachable",
+                    {
+                        "surveyId": this.parentNode.parentNode.id 
+                    }
+                  ).then((response) => {
+                    console.log(response);
+                  });
+            }else{
+                sendHttpRequest(
+                    "POST",
+                    "https://ytuce-sab.herokuapp.com/api/survey/reachable",
+                    {
+                        "surveyId": this.parentNode.parentNode.id 
+                    }
+                  ).then((response) => {
+                    console.log(response);
+                  });
+            }
+        })
+          
+
+          
 
           $("#" + element._id).find(".btnDeleteMySurvey").click(function(){
             console.log(this.parentNode.id);
