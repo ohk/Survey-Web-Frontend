@@ -42,7 +42,7 @@ function login1() {
         } else {
             alert('invalid credits')
         }
-    }, 5000)
+    }, 3000)
 }
 
 register = function () {
@@ -80,7 +80,7 @@ register = function () {
         } else {
             alert('invalid credits')
         }
-    }, 5000)
+    }, 3000)
 }
 
 function getCookie(cname) {
