@@ -135,14 +135,9 @@ $('form.survey').on('submit', function () {
     })
 
     sendHttpRequest('POST', 'https://ytuce-sab.herokuapp.com/api/answer/add', data).then((response) => {
-        if (response.status != 200) {
-            alert(response)
-        } else {
-            console.log(response)
-            alert('Survey added. You can check your survey this link: ' + window.location.hostname + '/survey.html?survey=' + response.surveyId)
-            document.location = 'listSurvey.html'
-        }
         console.log(response)
+        alert('Answer added.')
+        document.location = 'listSurvey.html'
     })
     return false
 })

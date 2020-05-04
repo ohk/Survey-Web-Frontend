@@ -206,13 +206,8 @@ function saveSurvey() {
     })
     data['questions'] = questions
     sendHttpRequest('POST', 'https://ytuce-sab.herokuapp.com/api/survey/add', data).then((response) => {
-        if (response.status != 200) {
-            console.log(response)
-        } else {
-            console.log(response)
-            alert('Survey added. You can check your survey this link: ' + window.location.hostname + 'survey.html?survey=' + response.surveyId)
-            document.location = 'mySurveys.html'
-        }
+        alert('Survey added. You can check your survey this link: ' + window.location.hostname + 'survey.html?survey=' + response.surveyId)
+        document.location = 'mySurveys.html'
     }, document)
 
     console.log(data)

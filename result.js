@@ -30,9 +30,9 @@ const sendHttpRequest = (method, url, data) => {
 
 $(function () {
     var resultContainer = $('.results-container')
-    //var surveyParam = getUrlParameter('survey')
+    var surveyParam = getUrlParameter('survey')
     //5eac27e9585448000455cad3
-    sendHttpRequest('GET', 'https://ytuce-sab.herokuapp.com/api/result/5eaf4811f23e37000407b838').then((data) => {
+    sendHttpRequest('GET', 'https://ytuce-sab.herokuapp.com/api/result/' + surveyParam).then((data) => {
         data.forEach(function (result) {
             console.log('Result Type: ' + result.qType)
             if (result.qType == 1) {
