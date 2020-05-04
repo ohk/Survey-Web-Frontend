@@ -15,7 +15,7 @@ const sendHttpRequest = (method, url, data) => {
     return promise
 }
 
-//setCookie('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWFiNDdjMzExOWFkZDcwOGRmOTdmM2QiLCJpYXQiOjE1ODgyODMzOTJ9.6kWW9TbJdYCaPY5zKRPfVynPBxpVF-39V7tLMGUdKGg', 1)
+//setCookie("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWFiNDdjMzExOWFkZDcwOGRmOTdmM2QiLCJpYXQiOjE1ODgyODMzOTJ9.6kWW9TbJdYCaPY5zKRPfVynPBxpVF-39V7tLMGUdKGg", 1);
 //bootstrapToggle("state", true);
 function setCookie(cname, cvalue, exdays) {
     var d = new Date()
@@ -49,12 +49,12 @@ $(function () {
         for (let index = 0; index < data.length; index++) {
             const element = data[index]
             var a = $survey.append(`
-          <div id="${element._id}">
-          <a href="#" class="list-group-item list-group-item-action" onclick="document.location = 'survey.html?survey=${element._id}'" name = "a">${element.surveyName}</a>
-          <button type="submit" class="btn btnDeleteMySurvey">Delete!</button>
-          <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-onstyle="dark" class="reachable" data-on="Reachable" data-off="Unreachable">
-          </div> 
-          `)
+        <div id="${element._id}">
+        <a href="#" class="list-group-item list-group-item-action" onclick="document.location = 'survey.html?survey=${element._id}'" name = "a">${element.surveyName}</a>
+        <button type="submit" class="btn btnDeleteMySurvey">Delete!</button>
+        <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-onstyle="dark" class="reachable" data-on="Public" data-off="Private">
+        </div> 
+        `)
             if (element.reachable == true) {
                 $('#' + element._id)
                     .find('.reachable')
@@ -64,16 +64,27 @@ $(function () {
                     .find('.reachable')
                     .bootstrapToggle('off')
             }
+
             $('#' + element._id)
                 .find('.reachable')
                 .change(function () {
                     console.log(this.checked)
                     console.log(this.parentNode.parentNode.id)
-                    sendHttpRequest('POST', 'https://ytuce-sab.herokuapp.com/api/survey/unreachable', {
-                        surveyId: this.parentNode.parentNode.id
-                    }).then((response) => {
-                        console.log(response)
-                    })
+                    console.log($('#' + element._id).find('.reachable').value)
+                    if (this.checked == false) {
+                        console.log('sadfg')
+                        sendHttpRequest('POST', 'https://ytuce-sab.herokuapp.com/api/survey/unreachable', {
+                            surveyId: this.parentNode.parentNode.id
+                        }).then((response) => {
+                            console.log(response)
+                        })
+                    } else {
+                        sendHttpRequest('POST', 'https://ytuce-sab.herokuapp.com/api/survey/reachable', {
+                            surveyId: this.parentNode.parentNode.id
+                        }).then((response) => {
+                            console.log(response)
+                        })
+                    }
                 })
 
             $('#' + element._id)
