@@ -186,12 +186,12 @@ h1 {
 .surveyBox {
   background-color: rgb(56, 56, 56);
   width: 50%;
-  height: 1000px;
+  height: auto;
   margin-top: 45px;
   margin-left: 50%;
   transform: translate(-50%, 0%);
   box-sizing: border-box;
-  padding: 30px 30px;
+  padding: 0px 30px;
 }
 
 .questionText {
@@ -241,4 +241,41 @@ h1 {
 .toggle{
     margin-left: -11%;
     margin-top: -40px;
+}
+
+.result-open-ended{
+  color:white;
+  margin-top: 25px;
+  margin-left: 10%;
+  padding-bottom: 25px;
+
+}
+
+.result-multi-single{
+  color: white;
+  margin-top: 25px;
+  margin-left: 10%;
+  padding-bottom: 25px;
+
+}
+
+.result-multi-multi{
+  color: white;
+  margin-top: 25px;
+  margin-left: 10%;
+  padding-bottom: 25px;
+
+}
+
+.result-open-ended-question{
+  font-size: 25;
+}
+
+.result-multi-single-question{
+  font-size: 25;
+}
+
+.result-multi-multi-question{
+  font-size: 25;
+  
 }
