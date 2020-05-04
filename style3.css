@@ -290,3 +290,10 @@ h1 {
 .result-multi-multi-question {
     font-size: 25;
 }
+
+.btnExport {
+    float: right;
+    margin-right: 25px;
+    background-color: green;
+    color: white;
+}
