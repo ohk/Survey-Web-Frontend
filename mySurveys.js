@@ -52,7 +52,9 @@ $(function () {
         <div id="${element._id}">
         <a href="#" class="list-group-item list-group-item-action" onclick="document.location = 'survey.html?survey=${element._id}'" name = "a">${element.surveyName}</a>
         <button type="submit" class="btn btnDeleteMySurvey">Delete!</button>
+        
         <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-onstyle="dark" class="reachable" data-on="Public" data-off="Private">
+        <button type="submit" class="btn btnResultMySurvey">Result!</button>
         </div> 
         `)
             if (element.reachable == true) {
@@ -94,6 +96,13 @@ $(function () {
                     sendHttpRequest('DELETE', 'https://ytuce-sab.herokuapp.com/api/survey/' + this.parentNode.id).then((response) => {
                         console.log(response)
                     })
+                })
+
+            $('#' + element._id)
+                .find('.btnResultMySurvey')
+                .click(function () {
+                    console.log(this.parentNode.id)
+                    document.location = 'result.html?survey=' + this.parentNode.id
                 })
         }
     })

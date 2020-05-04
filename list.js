@@ -23,6 +23,7 @@ $(function () {
             const element = data[index]
             $survey.append(`
           <a href="#" class="list-group-item list-group-item-action" onclick="document.location = 'survey.html?survey=${element._id}'" name = "a">${element.surveyName}</a>
+          <button type="submit" class="btn btnResultMySurvey" onclick="document.location = 'result.html?survey=${element._id}'">Result!</button>
        `)
         }
     })
