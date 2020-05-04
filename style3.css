@@ -7,6 +7,16 @@ body {
     font-family: sans-serif;
 }
 
+.fill-blank-answer-div {
+    background-color: grey;
+}
+
+.pie-chart-extend {
+    margin-top: 25px;
+    margin-left: 10%;
+
+    padding-bottom: 25px;
+}
 .container {
     top: 25%;
     left: 20%;
